@@ -7,4 +7,5 @@ from django.http import HttpResponse
 def lettersGame(request):
     return render(request, 'lettersGame.html')
 
-
+def numbersGame(request):
+    return render(request, 'numbersGame.html')
