@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
 Letters Game
@@ -7,4 +8,14 @@ Letters Game
 {% block content %}
 <h1>Welcome to the Letters Game</h1>
 <p>Enjoy playing the game!</p>
+
+<div id="game">
+    <button id="vowel-btn">Vowel</button>
+    <button id="consonant-btn">Consonant</button>
+    <div id="selected-letters"></div>
+</div>
+{% endblock %}
+{% block extra_scripts %}
+
+<script src="{% static 'js/lettersgame.js' %}"></script>
 {% endblock %}
