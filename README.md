@@ -27,8 +27,8 @@ A Django web application inspired by the fameous gameshow, Countdown.
 
 #### Wireframes:
 
-While working on this project, the wireframes were made using Balsamiq
+While working on this project, the wireframes were made using Balsamiq.
 
-**Phone**
+
 ![mobile](docs/design/main%20wireframe.png)
 ![mobile_2](docs/design/numbers.png)
