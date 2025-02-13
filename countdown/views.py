@@ -4,3 +4,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+def lettersGame(request):
+    return render(request, 'lettersGame.html')
+
+
