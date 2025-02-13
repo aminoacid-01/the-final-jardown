@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from countdown.views import lettersGame
+from countdown.views import lettersGame, random_vowel, random_consonant
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("letters/", lettersGame, name="letters"),
+    path("random-vowel/", random_vowel, name="random_vowel"),
+    path("random-consonant/", random_consonant, name="random_consonant"),
+
 ]

@@ -15,7 +15,8 @@ Letters Game
     <div id="selected-letters"></div>
 </div>
 {% endblock %}
-{% block extra_scripts %}
 
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 <script src="{% static 'js/lettersgame.js' %}"></script>
 {% endblock %}
