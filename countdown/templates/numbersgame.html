@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Numbers Game
+{% endblock %}
+
+{% block content %}
+
+
+<div id="game">
+    <h1>Welcome to the Numbers Game</h1>
+    <p>Pick 6 numbers in total. You can pick from 4 high numbers (25, 50, 75, 100) and numbers 1-10.</p>
+    <h3 id="target-number-title"></h3>
+    <div id="target-number"></div>
+    <h3>Selected Numbers</h3>
+    <div id="selected-numbers" class="number-tiles"></div>
+
+    <h4>Large Numbers</h4>
+    <div id="high-numbers" class="number-tiles">
+        <div class="tile" data-type="high"></div>
+        <div class="tile" data-type="high"></div>
+        <div class="tile" data-type="high"></div>
+        <div class="tile" data-type="high"></div>
+    </div>
+    <h4>Small Numbers</h4>
+    <div id="low-numbers" class="number-tiles">
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+        <div class="tile" data-type="low"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/numbersgame.js' %}"></script>
+{% endblock %}
