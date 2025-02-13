@@ -8,7 +8,10 @@ const lettersGame = {
             const randomVowel = this.vowels[Math.floor(Math.random() * this.vowels.length)];
             this.selectedLetters.push(randomVowel);
             this.updateSelectedLetters();
+<<<<<<< HEAD
             console.log(`Added vowel: ${randomVowel}`);
+=======
+>>>>>>> main
         }
     },
 
@@ -24,7 +27,34 @@ const lettersGame = {
     updateSelectedLetters() {
         const selectedLettersDiv = document.getElementById('selected-letters');
         selectedLettersDiv.innerHTML = this.selectedLetters.join(' ');
+<<<<<<< HEAD
         console.log(`Selected letters: ${this.selectedLetters.join(' ')}`);
+=======
+    },
+
+    submitGuess() {
+        const guessInput = document.getElementById('guess-input').value.toUpperCase();
+        const guessResultDiv = document.getElementById('guess-result');
+        const isValidGuess = this.isValidGuess(guessInput);
+
+        if (isValidGuess) {
+            guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid!`;
+        } else {
+            guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
+        }
+    },
+
+    isValidGuess(guess) {
+        const selectedLettersCopy = [...this.selectedLetters];
+        for (let char of guess) {
+            const index = selectedLettersCopy.indexOf(char);
+            if (index === -1) {
+                return false;
+            }
+            selectedLettersCopy.splice(index, 1);
+        }
+        return true;
+>>>>>>> main
     }
 };
 
@@ -36,4 +66,12 @@ if (vowelBtn) {
 const consonantBtn = document.getElementById('consonant-btn');
 if (consonantBtn) {
     consonantBtn.addEventListener('click', () => lettersGame.addConsonant());
+<<<<<<< HEAD
+=======
+}
+
+const submitGuessBtn = document.getElementById('submit-guess-btn');
+if (submitGuessBtn) {
+    submitGuessBtn.addEventListener('click', () => lettersGame.submitGuess());
+>>>>>>> main
 }
