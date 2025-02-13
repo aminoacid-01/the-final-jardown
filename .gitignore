@@ -1,2 +1,11 @@
+core.Microsoft*
+core.mongo*
+core.python*
+env.py
+.history/
+__pycache__/
+*.py[cod]
+node_modules/
+.github/
 venv
 env.py 
