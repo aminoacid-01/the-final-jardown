@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --primary-font: 'Lato', sans-serif;
+    --delft-blue: #1f3765;
+    --tang-blue: #175bd7;
+    --picton-blue: #44b6fc;
+    --electric-blue: #3de1f2;
+    --white: #ffffff;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--delft-blue);
+    color: var(--white);
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--tang-blue);
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--delft-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
