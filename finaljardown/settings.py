@@ -34,7 +34,7 @@ else:
     DEBUG = DEBUG.lower() in ['true', '1', 't', 'yes', 'y']
 
 ALLOWED_HOSTS = [
-    '.herokuapp.com',
+    '.herokuapp.com', '127.0.0.1',
 ]
 
 
