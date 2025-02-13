@@ -22,7 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("letters/", lettersGame, name="letters"),
-    path("random-vowel/", random_vowel, name="random_vowel"),
-    path("random-consonant/", random_consonant, name="random_consonant"),
-
+  
 ]
