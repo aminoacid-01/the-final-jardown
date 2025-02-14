@@ -37,6 +37,7 @@ else:
 
 ALLOWED_HOSTS = [
     '.herokuapp.com', '127.0.0.1',
+    'https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/en-us/',
 ]
 
 
@@ -54,6 +55,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'countdown',
+    #this is needed for the api please leave it here
+    'corsheaders',
 ]
 
 SITE_ID = 1
@@ -70,7 +73,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    #these are needed for the api please leave them here
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+#this is to enable the api to work 
+CORS_ALLOWED_ORIGINS = [
+    'https://od-api-sandbox.oxforddictionaries.com',
+    'http://127.0.0.1:8000',
+]
+
+#api credentials 
+OXFORD_APP_ID = '33f724b6'
+OXFORD_APP_KEY = '041ab678031e404c4d10899d0cee2994'
+
 
 ROOT_URLCONF = 'finaljardown.urls'
 
