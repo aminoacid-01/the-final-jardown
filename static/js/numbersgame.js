@@ -44,6 +44,7 @@ const numbersGame = {
         const targetNumberTitle = document.getElementById('target-number-title');
         targetNumberTitle.innerHTML = 'Target Number';
         targetNumberDiv.innerHTML = `${this.targetNumber}`;
+        targetNumberDiv.classList.remove('hidden');
     }
 };
 
