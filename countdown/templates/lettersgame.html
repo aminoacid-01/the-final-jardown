@@ -9,6 +9,51 @@ Letters Game
 <h1>Welcome to the Letters Game</h1>
 <p>Enjoy playing the game!</p>
 
+<div class="scoreboard">
+    <h1>Scoreboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Initials</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.score }}</td>
+                <td>{{ player.intials }}</td>
+                <td>{{ player.game_date }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<center>
+<div class="clock">
+    <div class="clock-face">
+        <div class="hand second-hand"></div>
+        <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
+        <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+    </div>
+</div>
+<button id="start-timer">Start 30-Second Timer</button>
+</center>
 <div id="game">
     <button id="vowel-btn">Vowel</button>
     <button id="consonant-btn">Consonant</button>
@@ -21,6 +66,7 @@ Letters Game
 </div>
 {% endblock %}
 
-{% block extra_scripts %}
+{% block scripts %}
 <script src="{% static 'js/lettersgame.js' %}"></script>
+<script src="{% static 'js/clock.js' %}"></script>
 {% endblock %}
