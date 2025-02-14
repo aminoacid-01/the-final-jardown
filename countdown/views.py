@@ -1,5 +1,6 @@
+import requests
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Scoreboard
 from django.conf import settings
 
