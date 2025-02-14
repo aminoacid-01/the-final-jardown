@@ -83,6 +83,13 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
 ]
 
+<<<<<<< HEAD
+=======
+#api credentials 
+OXFORD_APP_ID = '33f724b6'
+OXFORD_APP_KEY = os.environ.get('OXFORD_APP_KEY')
+
+>>>>>>> main
 
 ROOT_URLCONF = 'finaljardown.urls'
 
