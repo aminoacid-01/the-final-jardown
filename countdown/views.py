@@ -25,7 +25,7 @@ def proxy_oxford_api(request, word):
     url = f"https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/entries/en-us/{word}"
     headers = {
         'app_id': settings.OXFORD_APP_ID,
-        'app_key': settings.OXFORD_APP_KEY
+        'app_key': settings.OXFORD_APP_KEY,
     }
     response = requests.get(url, headers=headers)
     return JsonResponse(response.json(), safe=False)
