@@ -2,6 +2,8 @@ const lettersGame = {
     selectedLetters: [],
     vowels: ['A', 'E', 'I', 'O', 'U'],
     consonants: 'BCDFGHJKLMNPQRSTVWXYZ'.split(''),
+    appId: '33f724b6', // Your Oxford Dictionaries app ID
+    appKey: '041ab678031e404c4d10899d0cee2994', // Your Oxford Dictionaries API key
 
     addVowel() {
         if (this.selectedLetters.length < 9) {
@@ -16,7 +18,6 @@ const lettersGame = {
             const randomConsonant = this.consonants[Math.floor(Math.random() * this.consonants.length)];
             this.selectedLetters.push(randomConsonant);
             this.updateSelectedLetters();
-            console.log(`Added consonant: ${randomConsonant}`);
         }
     },
 
@@ -25,10 +26,10 @@ const lettersGame = {
         selectedLettersDiv.innerHTML = this.selectedLetters.join(' ');
     },
 
-    submitGuess() {
+    async submitGuess() {
         const guessInput = document.getElementById('guess-input').value.toUpperCase();
         const guessResultDiv = document.getElementById('guess-result');
-        const isValidGuess = this.isValidGuess(guessInput);
+        const isValidGuess = await this.isValidGuess(guessInput);
 
         if (isValidGuess) {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid!`;
@@ -37,7 +38,7 @@ const lettersGame = {
         }
     },
 
-    isValidGuess(guess) {
+    async isValidGuess(guess) {
         const selectedLettersCopy = [...this.selectedLetters];
         for (let char of guess) {
             const index = selectedLettersCopy.indexOf(char);
@@ -46,7 +47,21 @@ const lettersGame = {
             }
             selectedLettersCopy.splice(index, 1);
         }
-        return true;
+
+        // Check if the word is valid using the Oxford Dictionaries API
+        const response = await fetch(`https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/en-us/${guess.toLowerCase()}`, {
+            headers: {
+                'app_id': this.appId,
+                'app_key': this.appKey
+            }
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.results && data.results.length > 0;
+        } else {
+            return false;
+        }
     }
 };
 
