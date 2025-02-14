@@ -162,7 +162,16 @@ h1,p {
     margin-bottom: 20px;
     text-align: center;
 }
+
 #game {
+    text-align: center;
+}
+
+#numbers-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -180,7 +189,6 @@ button, input {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
-<<<<<<< HEAD
 }
 
 .number-tiles {
@@ -188,6 +196,12 @@ button, input {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .tile {
@@ -214,12 +228,13 @@ button, input {
     font-size: 48px;
     font-weight: bold;
     margin-top: 20px;
-}
-=======
     border: 1px inset var(--electric-blue);
     background-color: var(--delft-blue);
     color: var(--white);
+    padding: 10px 20px;
+    text-align: center;
 }
+
 #selected-letters {
     display: inline-block;
     margin: 10px;
@@ -227,4 +242,7 @@ button, input {
     border: 1px solid var(--tang-blue);
     border-radius: 5px;
 }
->>>>>>> main
+
+.hidden {
+    display: none;
+}
