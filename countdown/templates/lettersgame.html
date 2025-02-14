@@ -9,6 +9,31 @@ Letters Game
 <h1>Welcome to the Letters Game</h1>
 <p>Enjoy playing the game!</p>
 
+<div class="scoreboard">
+    <h1>Scoreboard</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Initials</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>{{ player.name }}</td>
+                <td>{{ player.score }}</td>
+                <td>{{ player.intials }}</td>
+                <td>{{ player.game_date }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
 <div id="game">
     <button id="vowel-btn">Vowel</button>
     <button id="consonant-btn">Consonant</button>
