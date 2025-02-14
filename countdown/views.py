@@ -12,4 +12,6 @@ def lettersGame(request):
 def numbersGame(request):
     return render(request, 'numbersgame.html')
 
+def home(request):
+    return render(request, 'home.html')
 
