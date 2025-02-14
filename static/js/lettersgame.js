@@ -25,7 +25,7 @@ const lettersGame = {
     },
 
     async submitGuess() {
-        const guessInput = document.getElementById('guess-input').value.toLowerCase();
+        const guessInput = document.getElementById('guess-input').value.toUpperCase();
         const guessResultDiv = document.getElementById('guess-result');
         const isValidGuess = await this.isValidGuess(guessInput);
 
