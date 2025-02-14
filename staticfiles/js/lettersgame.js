@@ -8,10 +8,6 @@ const lettersGame = {
             const randomVowel = this.vowels[Math.floor(Math.random() * this.vowels.length)];
             this.selectedLetters.push(randomVowel);
             this.updateSelectedLetters();
-
-            console.log(`Added vowel: ${randomVowel}`);
-
-
         }
     },
 
@@ -27,7 +23,6 @@ const lettersGame = {
     updateSelectedLetters() {
         const selectedLettersDiv = document.getElementById('selected-letters');
         selectedLettersDiv.innerHTML = this.selectedLetters.join(' ');
-
     },
 
     submitGuess() {
@@ -52,7 +47,6 @@ const lettersGame = {
             selectedLettersCopy.splice(index, 1);
         }
         return true;
-
     }
 };
 
@@ -64,11 +58,9 @@ if (vowelBtn) {
 const consonantBtn = document.getElementById('consonant-btn');
 if (consonantBtn) {
     consonantBtn.addEventListener('click', () => lettersGame.addConsonant());
-
 }
 
 const submitGuessBtn = document.getElementById('submit-guess-btn');
 if (submitGuessBtn) {
     submitGuessBtn.addEventListener('click', () => lettersGame.submitGuess());
-
 }
