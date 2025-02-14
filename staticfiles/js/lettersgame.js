@@ -16,6 +16,7 @@ const lettersGame = {
             const randomConsonant = this.consonants[Math.floor(Math.random() * this.consonants.length)];
             this.selectedLetters.push(randomConsonant);
             this.updateSelectedLetters();
+            console.log(`Added consonant: ${randomConsonant}`);
         }
     },
 
