@@ -83,10 +83,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
 ]
 
-#api credentials 
-OXFORD_APP_ID = '33f724b6'
-OXFORD_APP_KEY = '041ab678031e404c4d10899d0cee2994'
-
 
 ROOT_URLCONF = 'finaljardown.urls'
 
