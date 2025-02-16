@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from countdown.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("countdown/", include("countdown.urls")),
-  
+    path("", home, name="home"),
+    # Removed oxford api path
 ]
+    

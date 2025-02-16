@@ -1,6 +1,10 @@
+import json
+import requests
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Scoreboard
+from django.conf import settings
+from django.urls import path
 
 
 # Create your views here.
@@ -14,4 +18,3 @@ def numbersGame(request):
 
 def home(request):
     return render(request, 'home.html')
-

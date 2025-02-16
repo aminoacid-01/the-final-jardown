@@ -2,8 +2,6 @@ const lettersGame = {
     selectedLetters: [],
     vowels: ['A', 'E', 'I', 'O', 'U'],
     consonants: 'BCDFGHJKLMNPQRSTVWXYZ'.split(''),
-    appId: '33f724b6', // Your Oxford Dictionaries app ID
-    appKey: '041ab678031e404c4d10899d0cee2994', // Your Oxford Dictionaries API key
 
     addVowel() {
         if (this.selectedLetters.length < 9) {
@@ -48,18 +46,17 @@ const lettersGame = {
             selectedLettersCopy.splice(index, 1);
         }
 
-        // Check if the word is valid using the Oxford Dictionaries API
-        const response = await fetch(`https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/en-us/${guess.toLowerCase()}`, {
-            headers: {
-                'app_id': this.appId,
-                'app_key': this.appKey
-            }
-        });
+        // Check if the word is valid using a different dictionary API
+        // removed oxford dictionary API to make our lives easier
+        console.log(`Checking word: ${guess}`);
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${guess.toLowerCase()}/`);
 
         if (response.ok) {
             const data = await response.json();
-            return data.results && data.results.length > 0;
+            console.log('API response:', data);
+            return data.length > 0;
         } else {
+            console.error('API request failed:', response.status, response.statusText);
             return false;
         }
     }

@@ -37,6 +37,7 @@ else:
 
 ALLOWED_HOSTS = [
     '.herokuapp.com', '127.0.0.1',
+    'https://api.dictionaryapi.dev',
 ]
 
 
@@ -54,6 +55,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'countdown',
+    #this is needed for the api please leave it here
+    'corsheaders',
 ]
 
 SITE_ID = 1
@@ -70,7 +73,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    #these are needed for the api please leave them here
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+#this is to enable the api to work 
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'https://api.dictionaryapi.dev',
+]
+
+#api credentials 
+OXFORD_APP_ID = '33f724b6'
+OXFORD_APP_KEY = os.environ.get('OXFORD_APP_KEY')
+
 
 ROOT_URLCONF = 'finaljardown.urls'
 
