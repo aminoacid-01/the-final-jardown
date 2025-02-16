@@ -57,6 +57,7 @@ While working on this project, the wireframes were made using Balsamiq.
 
 
 ![mobile](docs/design/main%20wireframe.png)
+
 ![mobile_2](docs/design/numbers.png)
 
 #### Accessibility:
