@@ -1,6 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome to the {% block title %}Home{% endblock %} Page</h1>
-<p>This is the home page of your Django application.</p>
+<div class="home-container">
+    <h1 class="display-1">{% block title %}The Final Jardown{% endblock %}</h1>
+    <p class="mb-2">Want to enjoy a couple of rounds of games heavily inspired by the well loved gameshow,
+        Countdown?
+        Well, you've found
+        the right place!</p>
+    <p>Choose between the Letters Game or the Numbers Game and try them out!</p>
+    <div class="buttons text-center">
+        <a href="{% url 'lettersGame' %}" class="btn btn-primary mb-3">Letters</a>
+        <br>
+        <a href="{% url 'numbersGame' %}" class="btn btn-primary">Numbers</a>
+    </div>
+    <hr class="my-5">
+    <h2 class="text-center mt-5 display-5">About Team Jar</h2>
+    <p>Team Jar is a group of developers who have come together to create a web application that allows users to
+        play
+        games
+        inspired by the popular British game show, Countdown.</p>
+    <p>Click on our names to view our GitHub profiles</p>
+    <div class="githubs row justify-content-around">
+        <div class="col-md-4 text-center">
+            <p><a href="https://github.com/newworldhost" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-square-github"></i> JJ</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <p><a href="https://github.com/aminoacid-01" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-square-github"></i> Amina</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <p><a href="https://github.com/Richfletch92" target="_blank" rel="noopener noreferrer"><i
+                        class="fa-brands fa-square-github"></i> Richard</a></p>
+        </div>
+    </div>
+</div>
 {% endblock %}

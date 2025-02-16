@@ -37,7 +37,7 @@ else:
 
 ALLOWED_HOSTS = [
     '.herokuapp.com', '127.0.0.1',
-    'https://od-api-sandbox.oxforddictionaries.com/api/v2/entries/en-us/',
+    'https://api.dictionaryapi.dev',
 ]
 
 
@@ -79,8 +79,8 @@ MIDDLEWARE = [
 ]
 #this is to enable the api to work 
 CORS_ALLOWED_ORIGINS = [
-    'https://od-api-sandbox.oxforddictionaries.com',
     'http://127.0.0.1:8000',
+    'https://api.dictionaryapi.dev',
 ]
 
 #api credentials 
