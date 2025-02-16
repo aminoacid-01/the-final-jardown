@@ -38,11 +38,6 @@ While working on this project, the wireframes were made using Balsamiq.
 ![mobile_2](docs/design/numbers.png)
 
 
-## Database:
-
-### ERD:
-
-
 ## Key Features:
 
 ### General:

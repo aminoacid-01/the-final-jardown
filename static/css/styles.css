@@ -247,6 +247,12 @@ button, input {
     display: none;
 }
 
+/* homepage width */
+.home-container{
+    max-width: 900px;
+    margin: auto;
+}
+
 
 /* clock interface css */
 .clock {
