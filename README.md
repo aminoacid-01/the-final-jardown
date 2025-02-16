@@ -8,16 +8,20 @@ Join us in this exciting journey and test your skills in The Final Jardown!
 - [User Experience](#user-experience)
     - [User Stories](#user-stories)
     - [Design](#design)
+        - [Colour Scheme](#colour-scheme)
+        - [Typography](#typography)
     - [Wireframes](#wireframes)
-- [Database](#database)
+    - [Accessibility](#accessibility)
 - [Key Features](#key-features)
     - [General](#general)
-    - [Letters](#letters)
-    - [Numbers](#numbers)
-- [Technologies](#technologies)
-- [AI](#ai)
-- [Testing](#testing)
-- [Credits](#credits)
+    - [Game Modes](#game-modes)
+        - [Letters](#letters)
+        - [Numbers](#numbers)
+- [Deployment](#deployment)
+- [Forking and Cloning the Repository](#forking-and-cloning-the-repository)
+    - [Forking the Repository](#forking-the-repository)
+    - [Cloning the Repository](#cloning-the-repository)
+- [Team: JAR](#team-jar)
 
 ## User Experience:
 
@@ -87,6 +91,98 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 - **Target Number Generation:** A random target number is generated for players to reach using the selected numbers.
 - **Solution Validation:** The application checks if the player's solution is correct and provides feedback.
 
+## Deployment:
+
+To deploy The Final Jardown to Heroku using GitHub, follow these steps:
+
+1. **Create a Heroku Account:**
+    - If you don't already have a Heroku account, sign up at [Heroku](https://signup.heroku.com/).
+
+2. **Create a New Heroku App:**
+    - Log in to your Heroku account.
+    - Click on the "New" button in the top right corner and select "Create new app".
+    - Enter a unique name for your app and choose your region.
+    - Click "Create app".
+
+3. **Connect to GitHub:**
+    - In the "Deploy" tab of your new app, find the "Deployment method" section.
+    - Select "GitHub" as the deployment method.
+    - Click the "Connect to GitHub" button.
+    - Authorize Heroku to access your GitHub account if prompted.
+    - Search for the repository `the-final-jardown` and click "Connect".
+
+4. **Enable Automatic Deploys (Optional):**
+    - In the "Automatic deploys" section, you can choose to enable automatic deploys from the `main` branch.
+    - This will automatically deploy your app whenever you push changes to the `main` branch on GitHub.
+
+5. **Manual Deployment:**
+    - In the "Manual deploy" section, select the branch you want to deploy (e.g., `main`).
+    - Click the "Deploy Branch" button to manually deploy your app.
+
+6. **Configure Environment Variables:**
+    - Go to the "Settings" tab of your Heroku app.
+    - Click on "Reveal Config Vars" in the "Config Vars" section.
+    - Add the necessary environment variables for your Django application (e.g., `SECRET_KEY`, `DATABASE_URL`, etc.).
+
+7. **Run Migrations:**
+    - After deployment, you need to run database migrations.
+    - Go to the "More" dropdown in the top right corner of your app's dashboard and select "Run console".
+    - In the console, run the following commands:
+      ```bash
+      python manage.py migrate
+      ```
+
+8. **Collect Static Files:**
+    - In the same console, run:
+      ```bash
+      python manage.py collectstatic
+      ```
+
+Your application should now be deployed and running on Heroku. You can access it via the URL provided in the Heroku dashboard.
+
+## Forking and Cloning the Repository:
+
+### Forking the Repository:
+
+1. **Navigate to the Repository:**
+    - Go to the GitHub page of the repository: [the-final-jardown](https://github.com/aminoacid-01/the-final-jardown).
+
+2. **Fork the Repository:**
+    - Click the "Fork" button in the top right corner of the repository page.
+    - This will create a copy of the repository under your GitHub account.
+
+### Cloning the Repository:
+
+1. **Clone the Forked Repository:**
+    - Open your terminal or command prompt.
+    - Navigate to the directory where you want to clone the repository.
+    - Run the following command, replacing `yourusername` with your GitHub username:
+      ```bash
+      git clone https://github.com/yourusername/the-final-jardown.git
+      ```
+
+2. **Navigate to the Project Directory:**
+    - Change into the project directory:
+      ```bash
+      cd the-final-jardown
+      ```
+3. **Set up your database:**
+    - Create an env.py file with the following code:
+      ```python
+      import os
+
+
+      os.environ.set_default(
+        'DATABASE_URL', 'your-database-url'
+      )
+      ```
+    - Make migrations to set up your database with our models.
+      ```bash
+      python manage.py makemigrations
+      python manage.py migrate
+      ```
+
+You are now ready to make changes to the project!
 
 
 ## Team: JAR
