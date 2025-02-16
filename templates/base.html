@@ -3,6 +3,10 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'profile' as profile_url %}
+{% url 'edit_profile' as edit_profile_url %}
+{% url 'delete_profile' as delete_profile_url %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +49,18 @@
                                 href="{% url 'numbersGame' %}" style="color: var(--white);">Numbers Game</a>
                         </li>
                         {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == profile_url %}active{% endif %}"
+                                href="{% url 'profile' %}" style="color: var(--white);">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == edit_profile_url %}active{% endif %}"
+                                href="{% url 'edit_profile' %}" style="color: var(--white);">Edit Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == delete_profile_url %}active{% endif %}"
+                                href="{% url 'delete_profile' %}" style="color: var(--white);">Delete Profile</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
                                 href="{% url 'account_logout' %}" style="color: var(--white);">Logout</a>
