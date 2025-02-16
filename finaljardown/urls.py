@@ -17,14 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from countdown.views import home
-from countdown.views import proxy_oxford_api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("countdown/", include("countdown.urls")),
     path("", home, name="home"),
-    
-    # api path moved from countdown/urls.py
-    path('proxy/oxford/<str:word>/', proxy_oxford_api, name='proxy_oxford_api'),
+    # Removed oxford api path
 ]
+    
