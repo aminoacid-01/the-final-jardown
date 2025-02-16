@@ -8,9 +8,7 @@ Numbers Game
 {% block content %}
 
 
-   
-
-
+<div class="home-container">
 <div id="numbers-game">
     <h1>Welcome to the Numbers Game</h1>
     <p>Pick 6 numbers in total. You can pick from 4 high numbers (25, 50, 75, 100) and numbers 1-10.</p>
@@ -70,29 +68,6 @@ Numbers Game
         <div class="tile" data-type="low"></div>
     </div>
 </div>
-<div class="scoreboard">
-    <h1>Scoreboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Score</th>
-                <th>Initials</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for player in players %}
-            <tr>
-                <td>{{ player.name }}</td>
-                <td>{{ player.score }}</td>
-                <td>{{ player.intials }}</td>
-                <td>{{ player.game_date }}</td>
-                <td></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </div>
 {% endblock %}
 
