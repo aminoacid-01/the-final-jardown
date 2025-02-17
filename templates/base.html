@@ -46,6 +46,10 @@
                                 href="{% url 'lettersGame' %}" style="color: var(--white);">Letters Game</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/countdown/scoreboard/' %}active{% endif %}"
+                                href="{% url 'scoreboard' %}" style="color: var(--white);">Scoreboard</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {% if request.path == '/countdown/numbers/' %}active{% endif %}"
                                 href="{% url 'numbersGame' %}" style="color: var(--white);">Numbers Game</a>
                         </li>
