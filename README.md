@@ -92,6 +92,16 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 - **Target Number Generation:** A random target number is generated for players to reach using the selected numbers.
 - **Solution Validation:** The application checks if the player's solution is correct and provides feedback.
 
+### Future Features:
+
+#### Scoreboard:
+- **Highscores:** Display a scoreboard with the highscores of recent players.
+- **User Profiles:** Utilize user profiles to display each user's recent scores.
+- **Dynamic Updates:** The scoreboard updates dynamically as new scores are recorded.
+- **Leaderboard:** A leaderboard feature to showcase top players and their achievements.
+- **User Statistics:** Provide detailed statistics for each user, including their highest score, average score, and number of games played.
+- **Social Sharing:** Allow users to share their scores on social media platforms to encourage competition and engagement.
+
 ## Testing:
 
 Refer to [TESTING.md](docs/TESTING.md) for details on testing.
