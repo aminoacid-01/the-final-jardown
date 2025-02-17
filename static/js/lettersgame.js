@@ -2,6 +2,7 @@ const lettersGame = {
     selectedLetters: [],
     vowels: ['A', 'E', 'I', 'O', 'U'],
     consonants: 'BCDFGHJKLMNPQRSTVWXYZ'.split(''),
+    score: 0,
 
     addVowel() {
         if (this.selectedLetters.length < 9) {
@@ -30,7 +31,8 @@ const lettersGame = {
         const isValidGuess = await this.isValidGuess(guessInput);
 
         if (isValidGuess) {
-            guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid!`;
+            this.score += guessInput.length; // Add the length of the guess to the score
+            guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid! Score: ${this.score}.`; // Display the score
         } else {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
         }
