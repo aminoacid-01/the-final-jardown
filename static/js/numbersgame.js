@@ -3,6 +3,7 @@ const numbersGame = {
     highNumbers: [25, 50, 75, 100],
     lowNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     targetNumber: null,
+    score: 0,
 
     pickNumber(type, tile) {
         if (this.selectedNumbers.length < 6) {
@@ -45,6 +46,75 @@ const numbersGame = {
         targetNumberTitle.innerHTML = 'Target Number';
         targetNumberDiv.innerHTML = `${this.targetNumber}`;
         targetNumberDiv.classList.remove('hidden');
+    },
+
+    submitGuess() {
+        const guessInput = document.getElementById('guess-input').value;
+        const guessResultDiv = document.getElementById('guess-result');
+        const guess = parseInt(guessInput, 10);
+
+        if (isNaN(guess)) {
+            guessResultDiv.innerHTML = `Your answer "${guessInput}" is not a valid number.`;
+        } else {
+            const difference = Math.abs(guess - this.targetNumber);
+            let points = 0;
+
+            if (guess === this.targetNumber) {
+                points = 10;
+                guessResultDiv.innerHTML = `Your answer "${guessInput}" is correct! You scored ${points} points.`;
+            } else if (difference <= 5) {
+                points = 7;
+                guessResultDiv.innerHTML = `Your answer "${guessInput}" is close! You scored ${points} points.`;
+            } else if (difference <= 10) {
+                points = 5;
+                guessResultDiv.innerHTML = `Your answer "${guessInput}" is not too far off. You scored ${points} points.`;
+            } else {
+                guessResultDiv.innerHTML = `Your answer "${guessInput}" is incorrect. The correct number was ${this.targetNumber}. You scored ${points} points.`;
+            }
+
+            this.score += points;
+            this.updateScore();
+            document.getElementById('play-again-btn').classList.remove('hidden');
+        }
+    },
+
+    updateScore() {
+        const scoreDiv = document.getElementById('score');
+        scoreDiv.innerHTML = `Score: ${this.score}`;
+    },
+
+    resetGame() {
+        this.selectedNumbers = [];
+        this.highNumbers = [25, 50, 75, 100];
+        this.lowNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        this.targetNumber = null;
+        // bring the tiles back after reset
+        document.querySelectorAll('.tile').forEach(tile => {
+            const type = tile.getAttribute('data-type');
+            if (type === 'high') {
+                document.getElementById('high-numbers').appendChild(tile);
+            } else if (type === 'low') {
+                document.getElementById('low-numbers').appendChild(tile);
+            }
+        });
+
+        document.getElementById('selected-numbers').innerHTML = '';
+        document.querySelectorAll('.tile').forEach(tile => {
+            tile.innerHTML = '';
+            tile.classList.remove('revealed');
+            const type = tile.getAttribute('data-type');
+            if (type === 'high') {
+                document.getElementById('high-numbers').appendChild(tile);
+            } else if (type === 'low') {
+                document.getElementById('low-numbers').appendChild(tile);
+            }
+        });
+
+        document.getElementById('target-number').classList.add('hidden');
+        document.getElementById('target-number-title').innerHTML = '';
+        document.getElementById('guess-input').value = '';
+        document.getElementById('guess-result').innerHTML = '';
+        document.getElementById('play-again-btn').classList.add('hidden');
     }
 };
 
@@ -56,3 +126,21 @@ document.querySelectorAll('.tile').forEach(tile => {
         }
     });
 });
+
+const submitGuessBtn = document.getElementById('numbers-guess-btn');
+if (submitGuessBtn) {
+    console.log('Submit button found');
+    submitGuessBtn.addEventListener('click', () => {
+        console.log('Submit button clicked');
+        numbersGame.submitGuess();
+    });
+} else {
+    console.log('Submit button not found');
+}
+
+const playAgainBtn = document.getElementById('play-again-btn');
+if (playAgainBtn) {
+    playAgainBtn.addEventListener('click', () => {
+        numbersGame.resetGame();
+    });
+}

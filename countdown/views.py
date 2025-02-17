@@ -50,3 +50,20 @@ def delete_profile(request):
         user.delete()
         return redirect('home')
     return render(request, 'delete_profile.html')
+
+
+# added for storing scores
+@login_required
+def save_letters_game_result(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        score = data.get('score')
+
+        # Update the user's high score if the new score is higher
+        profile = request.user.profile
+        if score > profile.high_score:
+            profile.high_score = score
+            profile.save()
+
+        return JsonResponse({'status': 'success', 'high_score': profile.high_score})
+    return JsonResponse({'status': 'error'}, status=400)

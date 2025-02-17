@@ -33,10 +33,10 @@ const lettersGame = {
         if (isValidGuess) {
             this.score += guessInput.length; // Add the length of the guess to the score
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid! Score: ${this.score}.`; // Display the score
+            this.saveHighScore();
             this.selectedLetters = []; // Clear the selected letters
             setTimeout(() => this.updateSelectedLetters(), 1000);
             this.score = 0;
-
         } else {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
             this.selectedLetters = []; // Clear the selected letters
@@ -67,6 +67,26 @@ const lettersGame = {
             console.error('API request failed:', response.status, response.statusText);
             return false;
         }
+    },
+
+    saveHighScore() {
+        fetch('/save-letters-game-result/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({
+                score: this.score
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('High score saved:', data);
+        })
+        .catch(error => {
+            console.error('Error saving high score:', error);
+        });
     }
 };
 
@@ -83,4 +103,20 @@ if (consonantBtn) {
 const submitGuessBtn = document.getElementById('submit-guess-btn');
 if (submitGuessBtn) {
     submitGuessBtn.addEventListener('click', () => lettersGame.submitGuess());
+}
+
+// Helper function to get CSRF token
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
 }
