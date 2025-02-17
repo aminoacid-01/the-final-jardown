@@ -58,6 +58,7 @@ form {
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+
 }
 
 form h1 {
@@ -95,6 +96,7 @@ form textarea:focus {
     border-color: var(--tang-blue);
     outline: none;
 }
+
 
 form .btn {
     font-family: var(--primary-font);
