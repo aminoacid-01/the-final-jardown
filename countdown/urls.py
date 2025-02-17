@@ -8,5 +8,5 @@ urlpatterns = [
     path('profile/edit/', views.edit_profile, name='edit_profile'),
     path('profile/delete/', views.delete_profile, name='delete_profile'),
     path('save-letters-game-result/', views.save_letters_game_result, name='save_letters_game_result'),
-    
+    path('scoreboard/', views.scoreboard, name='scoreboard'),
 ]
