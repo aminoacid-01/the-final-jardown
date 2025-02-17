@@ -16,20 +16,13 @@
 
 ### W3C
 
-**Home:**  
-![Home](valid/lighthouse/home.png)
 
-**Letters:**  
-![Letters](valid/lighthouse/letters.png)
-
-**Numbers:**  
-![Numbers](valid/lighthouse/numbers.png)
 
 ### CSS
 
 **style.css:**
 
-![style](valid/css/style.png)
+![style](valid/css/style_css.png)
 
 ### JsHint
 
@@ -48,11 +41,37 @@
 
 ### Lighthouse
 
-Home
 
-Letters 
+**Home:**  
 
-Numbers
+- Mobile:
+
+![Home](valid/lighthous/home.png)
+
+- Desktop:
+
+![Home](valid/lighthous/home_desktop.png)
+
+**Letters:**
+
+- Mobile:
+
+![Letters](valid/lighthous/letters.png)
+
+- Desktop:
+
+![Letters](valid/lighthous/letters_desktop.png)
+
+**Numbers:**
+
+- Mobile:
+
+![Numbers](valid/lighthous/numbers.png)
+
+- Desktop:
+
+![Numbers](valid/lighthous/numbers_desktop.png)
+
 
 ## Unit Testing:
 # Testing
