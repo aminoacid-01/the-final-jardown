@@ -7,6 +7,7 @@
     --picton-blue: #44b6fc;
     --electric-blue: #3de1f2;
     --white: #ffffff;
+    --danger-red: #dc3545;
 }
 
 /* Navigation Bar */
@@ -127,6 +128,15 @@ form .btn-secondary {
 
 form .btn-secondary:hover {
     background-color: var(--picton-blue);
+}
+
+form .btn-danger {
+    background-color: var(--danger-red);
+    color: var(--white);
+}
+
+form .btn-danger:hover {
+    background-color: #bb2c3a
 }
 
 form .btn:hover {
