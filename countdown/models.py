@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 class Scoreboard(models.Model):
     player_name = models.CharField(max_length=100)
@@ -16,6 +17,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=100, blank=True, null=True)
     birth_date = models.DateField(blank=True, null=True)
     high_score = models.IntegerField(default=0)
+    profile_pic = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.user.username

@@ -300,3 +300,60 @@ h1, p {
     left: 49%;
     transform-origin: center bottom;
 }
+
+/* Profile Page Styles */
+.profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h1 {
+    font-family: var(--primary-font);
+    color: var(--delft-blue);
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .profile-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-info {
+    font-family: var(--primary-font);
+    color: var(--delft-blue);
+    padding: 15px;
+    background-color: var(--lightblue);
+    border: 2px inset black;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
