@@ -35,7 +35,7 @@ const lettersGame = {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid! Score: ${this.score}.`; // Display the score
             this.selectedLetters = []; // Clear the selected letters
             setTimeout(() => this.updateSelectedLetters(), 1000);
-            this.score = 0; // Reset the score
+            this.score = 0;
 
         } else {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
