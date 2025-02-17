@@ -88,6 +88,15 @@ const numbersGame = {
         this.highNumbers = [25, 50, 75, 100];
         this.lowNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         this.targetNumber = null;
+        // bring the tiles back after reset
+        document.querySelectorAll('.tile').forEach(tile => {
+            const type = tile.getAttribute('data-type');
+            if (type === 'high') {
+                document.getElementById('high-numbers').appendChild(tile);
+            } else if (type === 'low') {
+                document.getElementById('low-numbers').appendChild(tile);
+            }
+        });
 
         document.getElementById('selected-numbers').innerHTML = '';
         document.querySelectorAll('.tile').forEach(tile => {
