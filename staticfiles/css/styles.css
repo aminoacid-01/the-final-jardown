@@ -292,3 +292,10 @@ h1, p {
     left: 49%;
     transform-origin: center bottom;
 }
+
+.profile {
+    padding: 15px;
+    background-color: lightblue;
+    border: 2px inset black;
+    margin: 10px 300px;
+}
