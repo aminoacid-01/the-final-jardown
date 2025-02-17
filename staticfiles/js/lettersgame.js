@@ -21,7 +21,7 @@ const lettersGame = {
 
     updateSelectedLetters() {
         const selectedLettersDiv = document.getElementById('selected-letters');
-        selectedLettersDiv.innerHTML = this.selectedLetters.join(' ');
+        selectedLettersDiv.innerHTML = this.selectedLetters.map(letter => `<div class="tile revealed">${letter}</div>`).join('');
     },
 
     async submitGuess() {
@@ -47,7 +47,6 @@ const lettersGame = {
         }
 
         // Check if the word is valid using a different dictionary API
-        // removed oxford dictionary API to make our lives easier
         console.log(`Checking word: ${guess}`);
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${guess.toLowerCase()}/`);
 
