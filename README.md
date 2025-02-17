@@ -4,6 +4,10 @@ The Final Jardown is a web-based application that brings the excitement and chal
 
 Join us in this exciting journey and test your skills in The Final Jardown!
 
+![screenshot](docs/Screenshot.png)
+
+Deployed link: [here](https://the-final-jardown-a2f0671d423f.herokuapp.com/)
+
 ## Contents:
 - [User Experience](#user-experience)
     - [User Stories](#user-stories)
