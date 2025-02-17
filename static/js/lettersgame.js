@@ -39,6 +39,9 @@ const lettersGame = {
 
         } else {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
+            this.selectedLetters = []; // Clear the selected letters
+            setTimeout(() => this.updateSelectedLetters(), 1000);
+            this.score = 0;
         }
     },
 
