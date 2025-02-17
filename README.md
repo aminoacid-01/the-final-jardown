@@ -75,8 +75,13 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 ## Key Features:
 
 ### General:
-- **Fully responsive navbar with navigational links**
-- **Footer w/ copyright**
+- **Fully Responsive Navbar with Navigational Links:**
+    - The application features a fully responsive navigation bar that adapts to different screen sizes and devices. This ensures a seamless user experience whether accessed on a desktop, tablet, or mobile device.
+    - The navbar includes links to all major sections of the application, such as Home, Numbers, Letters, User Profile, and more, allowing users to easily navigate through the site.
+
+- **Footer with Copyright Information:**
+    - The footer is designed to be consistent across all pages of the application, providing a cohesive look and feel.
+    - It includes copyright information to protect the intellectual property of the developers and acknowledge the creation date of the application.
 
 
 ### Game Modes:
