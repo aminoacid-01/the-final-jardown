@@ -16,15 +16,20 @@
 
 ### W3C
 
-Home
+**Home:**  
+![Home](valid/lighthouse/home.png)
 
-Letters
+**Letters:**  
+![Letters](valid/lighthouse/letters.png)
 
-Numbers
+**Numbers:**  
+![Numbers](valid/lighthouse/numbers.png)
 
 ### CSS
 
-Style.css
+**style.css:**
+
+![style](valid/css/style.png)
 
 ### JsHint
 
