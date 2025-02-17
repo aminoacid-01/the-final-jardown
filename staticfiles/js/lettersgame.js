@@ -3,6 +3,7 @@ const numbersGame = {
     highNumbers: [25, 50, 75, 100],
     lowNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     targetNumber: null,
+    highScore: 0,
 
     pickNumber(type, tile) {
         if (this.selectedNumbers.length < 6) {
@@ -45,7 +46,14 @@ const numbersGame = {
         targetNumberTitle.innerHTML = 'Target Number';
         targetNumberDiv.innerHTML = `${this.targetNumber}`;
         targetNumberDiv.classList.remove('hidden');
+        this.calculateHighScore();
         this.saveResult();
+    },
+
+    calculateHighScore() {
+        // Calculate the high score based on the selected numbers and target number
+        // This is a placeholder calculation, replace with your actual logic
+        this.highScore = this.selectedNumbers.reduce((a, b) => a + b, 0);
     },
 
     saveResult() {
@@ -57,7 +65,8 @@ const numbersGame = {
             },
             body: JSON.stringify({
                 selected_numbers: this.selectedNumbers,
-                target_number: this.targetNumber
+                target_number: this.targetNumber,
+                high_score: this.highScore
             })
         })
         .then(response => response.json())
