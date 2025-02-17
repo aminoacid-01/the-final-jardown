@@ -54,24 +54,21 @@ def delete_profile(request):
 
 # added for storing scores
 @login_required
-def save_numbers_game_result(request):
+def save_letters_game_result(request):
     if request.method == 'POST':
         data = json.loads(request.body)
-        selected_numbers = data.get('selected_numbers')
-        target_number = data.get('target_number')
-        high_score = data.get('high_score')
+        score = data.get('score')
 
         # Update the user's high score if the new score is higher
         profile = request.user.profile
-        if high_score > profile.high_score:
-            profile.high_score = high_score
+        if score > profile.high_score:
+            profile.high_score = score
             profile.save()
 
-        result = NumbersGameResult.objects.create(
-            user=request.user,
-            selected_numbers=selected_numbers,
-            target_number=target_number,
-            high_score=high_score
-        )
-        return JsonResponse({'status': 'success', 'result_id': result.id})
+        return JsonResponse({'status': 'success', 'high_score': profile.high_score})
     return JsonResponse({'status': 'error'}, status=400)
+
+
+def scoreboard(request):
+    players = Scoreboard.objects.all().order_by('-score')
+    return render(request, 'scoreboard.html', {'players': players})
