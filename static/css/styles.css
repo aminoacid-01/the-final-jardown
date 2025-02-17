@@ -258,7 +258,7 @@ h1,p {
 .clock {
     width: 300px;
     height: 300px;
-    border: 20px solid black;
+    border: 10px solid black;
     border-radius: 50%;
     position: relative;
     padding: 2rem;
@@ -302,7 +302,7 @@ h1,p {
     height: 20px;
     background: black;
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 49%;
     transform-origin: center bottom;
 }
