@@ -58,8 +58,7 @@ The colour scheme for The Final Jardown is pictured below. It was made by colour
 
 ### Wireframes:
 
-While working on this project, the wireframes were made using Balsamiq.
-
+While working on this project, the wireframes were made using Balsamiq. Balsamiq is a rapid wireframing tool that reproduces the experience of sketching on a whiteboard but using a computer. This tool allowed us to quickly iterate on design ideas and create clear, concise wireframes that effectively communicated our vision for The Final Jardown.
 
 ![mobile](docs/design/main%20wireframe.png)
 
@@ -90,7 +89,7 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 #### Numbers:
 - **Select Large and Small Numbers:** Players can choose a combination of large and small numbers, similar to the game show format.
 - **Target Number Generation:** A random target number is generated for players to reach using the selected numbers.
-- **Solution Validation:** The application checks if the player's solution is correct and provides feedback.
+- **Answer Validation:** The application checks if the player's answer is correct and awards points based on how close it is to the number.
 
 ### Future Features:
 
@@ -101,6 +100,21 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 - **Leaderboard:** A leaderboard feature to showcase top players and their achievements.
 - **User Statistics:** Provide detailed statistics for each user, including their highest score, average score, and number of games played.
 - **Social Sharing:** Allow users to share their scores on social media platforms to encourage competition and engagement.
+
+
+## AI Implementation:
+
+- **Writing Unit Tests for Django:** AI was utilized to generate comprehensive unit tests for the Django application, ensuring robust and reliable code. These tests helped in identifying and fixing bugs early in the development process, leading to a more stable application.
+
+- **Generating Copy for the Home Page:** AI assisted in creating engaging and informative content for the home page. This included crafting compelling descriptions and calls to action that effectively communicated the purpose and features of The Final Jardown to users.
+
+- **Troubleshooting Issues with the API:** Before switching to DictionaryAPI.dev, AI was instrumental in diagnosing and resolving issues with the initial API integration. This involved analyzing error messages, suggesting potential fixes, and optimizing the API usage to improve performance and reliability.
+
+- **Debugging:** AI was used to identify and resolve bugs in the codebase. By analyzing error logs and suggesting fixes, AI helped streamline the debugging process, ensuring a smoother development experience.
+
+- **Styling Forms:** Used AI to reduce the time needed for styling forms by creating templates and applying them, followed by manual adjustments as needed.
+
+By leveraging AI, we were able to enhance the development process, improve the quality of our code, and create a more polished and user-friendly application.
 
 ## Testing:
 
@@ -202,9 +216,9 @@ You are now ready to make changes to the project!
 
 ## Team: JAR
 
-- Amina: [Github](https://github.com/aminoacid-01) |
-- JJ: [Github](https://github.com/newworldhost/) |
-- Richard [Github](https://github.com/Richfletch92) |
+- Amina: [Github](https://github.com/aminoacid-01) 
+- JJ: [Github](https://github.com/newworldhost/) 
+- Richard [Github](https://github.com/Richfletch92) 
 
 
 
