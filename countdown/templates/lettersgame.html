@@ -7,44 +7,46 @@ Letters Game
 
 {% block content %}
 <div class="home-container">
-<h1>Welcome to the Letters Game</h1>
-<p>
-    Select vowels and consonants to form a set of 9 letters. You have 30 seconds to form the longest word possible using the selected letters. Words must be valid according to the dictionary. Submit your guess before the timer runs out. 
-</p>
+    <h1>Welcome to the Letters Game</h1>
+    <p>
+        Select vowels and consonants to form a set of 9 letters. You have 30 seconds to form the longest word possible
+        using the selected letters. Words must be valid according to the dictionary. Submit your guess before the timer
+        runs out.
+    </p>
 
-<center>
-    <div class="clock">
-        <div class="clock-face">
-            <div class="hand second-hand"></div>
-            <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
-            <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+    <center>
+        <div class="clock">
+            <div class="clock-face">
+                <div class="hand second-hand"></div>
+                <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
+                <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+            </div>
         </div>
+        <button id="start-timer" class="letters-buttons">Start 30-Second Timer</button>
+    </center>
+    <div id="game">
+        <button id="vowel-btn" class="letters-buttons">Vowel</button>
+        <button id="consonant-btn" class="letters-buttons">Consonant</button>
+        <br><br><br>
+        <div id="selected-letters" class="letter-tiles row"></div>
+        <br><br>
+        <input type="text" id="guess-input" class="letters-buttons" placeholder="Enter your guess">
+        <button id="submit-guess-btn" class="letters-buttons">Submit Guess</button>
+        <div id="guess-result"></div>
     </div>
-    <button id="start-timer">Start 30-Second Timer</button>
-</center>
-<div id="game">
-    <button id="vowel-btn">Vowel</button>
-    <button id="consonant-btn">Consonant</button>
-    <br><br><br>
-    <div id="selected-letters"></div>
-    <br><br>
-    <input type="text" id="guess-input" placeholder="Enter your guess">
-    <button id="submit-guess-btn">Submit Guess</button>
-    <div id="guess-result"></div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-{% block scripts %}
-<script src="{% static 'js/lettersgame.js' %}"></script>
-<script src="{% static 'js/clock.js' %}"></script>
-{% endblock %}
+    {% block scripts %}
+    <script src="{% static 'js/lettersgame.js' %}"></script>
+    <script src="{% static 'js/clock.js' %}"></script>
+    {% endblock %}
