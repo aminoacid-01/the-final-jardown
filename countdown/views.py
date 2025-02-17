@@ -68,7 +68,6 @@ def save_letters_game_result(request):
         return JsonResponse({'status': 'success', 'high_score': profile.high_score})
     return JsonResponse({'status': 'error'}, status=400)
 
-
 def scoreboard(request):
-    players = Scoreboard.objects.all().order_by('-score')
+    players = Profile.objects.all().order_by('-high_score')
     return render(request, 'scoreboard.html', {'players': players})
