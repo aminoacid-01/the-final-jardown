@@ -1,5 +1,6 @@
 const secondHand = document.querySelector('.second-hand');
 const startButton = document.getElementById('start-timer');
+const countdownAudio = new Audio(countdownAudioUrl); // Update the path to your countdown.webm file
 let timerInterval;
 
 function startTimer() {
@@ -22,5 +23,7 @@ function startTimer() {
 startButton.addEventListener('click', () => {
     clearInterval(timerInterval); // Clear any existing timer
     secondHand.style.transform = 'rotate(90deg)'; // Reset the hand position
+    countdownAudio.currentTime = 0; // Reset the audio to the beginning
+    countdownAudio.play(); // Play the countdown audio
     startTimer();
 });

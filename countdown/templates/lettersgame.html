@@ -47,6 +47,9 @@ Letters Game
     {% endblock %}
 
     {% block scripts %}
+    <script>
+        const countdownAudioUrl = "{% static 'audio/countdown.webm' %}";
+    </script>
     <script src="{% static 'js/lettersgame.js' %}"></script>
     <script src="{% static 'js/clock.js' %}"></script>
     {% endblock %}
