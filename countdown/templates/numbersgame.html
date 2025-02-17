@@ -32,7 +32,7 @@ Numbers Game
             <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
         </div>
     </div>
-    <button id="start-timer">Start 30-Second Timer</button>
+    <button id="start-timer" class="letters-buttons">Start 30-Second Timer</button>
     <h3>Selected Numbers</h3>
     <div id="selected-numbers" class="number-tiles"></div>
 
@@ -72,6 +72,9 @@ Numbers Game
 {% endblock %}
 
 {% block scripts %}
+<script>
+    const countdownAudioUrl = "{% static 'audio/countdown.webm' %}";
+</script>
 <script src="{% static 'js/numbersgame.js' %}"></script>
 <script src="{% static 'js/clock.js' %}"></script>
 {% endblock %}
