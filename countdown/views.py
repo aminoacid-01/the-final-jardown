@@ -30,6 +30,7 @@ def home(request):
 def profile(request):
     return render(request, 'profile.html', {'profile': request.user.profile})
 
+
 @login_required
 def edit_profile(request):
     if request.method == 'POST':
