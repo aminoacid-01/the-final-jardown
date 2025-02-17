@@ -48,7 +48,6 @@ footer {
     padding: 1rem;
 }
 
-
 /* Common Form Styles */
 form {
     display: flex;
@@ -56,46 +55,43 @@ form {
     max-width: 400px;
     margin: 30px auto;
     padding: 20px;
-    background-color: var(--white); /* Use container color */
+    background-color: var(--white);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1); /* Use shadow color */
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
 form h1 {
     font-family: var(--primary-font);
     color: var(--delft-blue);
-    margin-bottom: 1.5rem;
     text-align: center;
     font-size: 2rem;
-    color: var(--delft-blue); /* Use primary color */
-    text-align: center;
     margin-bottom: 20px;
 }
 
 form label {
     font-weight: bold;
-    color: var(--delft-blue); /* Use font color */
+    color: var(--delft-blue);
 }
 
 form input[type="text"],
 form input[type="password"],
-form input[type="email"] {
+form input[type="email"],
+form input[type="date"],
+form textarea {
     font-family: var(--primary-font);
     padding: 0.75rem;
     margin-bottom: 1rem;
     border: 1px solid var(--delft-blue);
     border-radius: 5px;
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Use shadow color */
-    border-radius: 5px;
-    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1); /* Use shadow color */
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 form input[type="text"]:focus,
 form input[type="password"]:focus,
-form input[type="email"]:focus {
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form textarea:focus {
     border-color: var(--tang-blue);
     outline: none;
 }
@@ -107,10 +103,7 @@ form .btn {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
-    padding: 10px;
     margin-top: 10px;
-    border: none;
-    border-radius: 5px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -118,8 +111,6 @@ form .btn {
 form .btn-primary {
     background-color: var(--tang-blue);
     color: var(--white);
-    background-color: var(--tang-blue); /* Use primary color */
-    color: var(--white); /* Use secondary color */
 }
 
 form .btn-primary:hover {
@@ -132,8 +123,6 @@ form .btn-secondary {
     text-align: center;
     display: block;
     margin-bottom: 1rem;
-    background-color: var(--electric-blue); /* Use secondary color */
-    color: var(--white); /* Use primary color */
 }
 
 form .btn-secondary:hover {
@@ -148,15 +137,16 @@ form a {
     display: block;
     text-align: center;
     margin-top: 10px;
-    color: var(--tang-blue); /* Use primary color */
+    color: var(--tang-blue);
     text-decoration: none;
 }
 
 form a:hover {
     text-decoration: underline;
 }
+
 /* letters.css */
-h1,p {
+h1, p {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -175,7 +165,7 @@ h1,p {
     text-align: center;
 }
 
-button, input {
+.letters-buttons {
     padding: 10px 20px;
     margin: 10px;
     font-size: 16px;
@@ -189,6 +179,10 @@ button, input {
     margin-top: 20px;
     font-size: 24px;
     font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .number-tiles {
@@ -200,8 +194,8 @@ button, input {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .tile {
@@ -235,37 +229,26 @@ button, input {
     text-align: center;
 }
 
-#selected-letters {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid var(--tang-blue);
-    border-radius: 5px;
-}
-
 .hidden {
     display: none;
 }
 
 /* homepage width */
-.home-container{
+.home-container {
     max-width: 900px;
     margin: auto;
 }
-
 
 /* clock interface css */
 .clock {
     width: 300px;
     height: 300px;
-    border: 20px solid black;
+    border: 10px solid black;
     border-radius: 50%;
     position: relative;
     padding: 2rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background: white;
-
-    
 }
 
 .clock-face {
@@ -273,7 +256,6 @@ button, input {
     width: 100%;
     height: 100%;
     transform: translateY(-3px); /* account for the height of the clock hands */
- 
 }
 
 .hand {
@@ -304,7 +286,7 @@ button, input {
     height: 20px;
     background: black;
     position: absolute;
-    top: 45%;
+    top: 42%;
     left: 49%;
     transform-origin: center bottom;
 }

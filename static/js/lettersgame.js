@@ -2,6 +2,7 @@ const lettersGame = {
     selectedLetters: [],
     vowels: ['A', 'E', 'I', 'O', 'U'],
     consonants: 'BCDFGHJKLMNPQRSTVWXYZ'.split(''),
+    score: 0,
 
     addVowel() {
         if (this.selectedLetters.length < 9) {
@@ -21,7 +22,7 @@ const lettersGame = {
 
     updateSelectedLetters() {
         const selectedLettersDiv = document.getElementById('selected-letters');
-        selectedLettersDiv.innerHTML = this.selectedLetters.join(' ');
+        selectedLettersDiv.innerHTML = this.selectedLetters.map(letter => `<div class="tile revealed">${letter}</div>`).join('');
     },
 
     async submitGuess() {
@@ -30,9 +31,17 @@ const lettersGame = {
         const isValidGuess = await this.isValidGuess(guessInput);
 
         if (isValidGuess) {
-            guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid!`;
+            this.score += guessInput.length; // Add the length of the guess to the score
+            guessResultDiv.innerHTML = `Your guess "${guessInput}" is valid! Score: ${this.score}.`; // Display the score
+            this.selectedLetters = []; // Clear the selected letters
+            setTimeout(() => this.updateSelectedLetters(), 1000);
+            this.score = 0;
+
         } else {
             guessResultDiv.innerHTML = `Your guess "${guessInput}" is not valid.`;
+            this.selectedLetters = []; // Clear the selected letters
+            setTimeout(() => this.updateSelectedLetters(), 1000);
+            this.score = 0;
         }
     },
 
@@ -47,7 +56,6 @@ const lettersGame = {
         }
 
         // Check if the word is valid using a different dictionary API
-        // removed oxford dictionary API to make our lives easier
         console.log(`Checking word: ${guess}`);
         const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${guess.toLowerCase()}/`);
 
