@@ -7,4 +7,6 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('profile/edit/', views.edit_profile, name='edit_profile'),
     path('profile/delete/', views.delete_profile, name='delete_profile'),
+    path('save-numbers-game-result/', views.save_numbers_game_result, name='save_numbers_game_result'),
+    
 ]

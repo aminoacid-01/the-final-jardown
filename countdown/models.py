@@ -21,3 +21,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+    
+    
+
+class NumbersGameResult(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    selected_numbers = models.JSONField()
+    target_number = models.IntegerField()
+    result_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Result for {self.user.username} on {self.result_date}"

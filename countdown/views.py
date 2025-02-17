@@ -50,3 +50,19 @@ def delete_profile(request):
         user.delete()
         return redirect('home')
     return render(request, 'delete_profile.html')
+
+
+# added for storing scores
+@login_required
+def save_numbers_game_result(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        selected_numbers = data.get('selected_numbers')
+        target_number = data.get('target_number')
+        result = NumbersGameResult.objects.create(
+            user=request.user,
+            selected_numbers=selected_numbers,
+            target_number=target_number
+        )
+        return JsonResponse({'status': 'success', 'result_id': result.id})
+    return JsonResponse({'status': 'error'}, status=400)
