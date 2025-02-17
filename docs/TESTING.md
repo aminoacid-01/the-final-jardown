@@ -14,10 +14,6 @@
 
 ## Validators
 
-### W3C
-
-
-
 ### CSS
 
 **style.css:**
