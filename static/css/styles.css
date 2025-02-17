@@ -64,7 +64,6 @@ form {
 form h1 {
     font-family: var(--primary-font);
     color: var(--delft-blue);
-    margin-bottom: 1.5rem;
     text-align: center;
     font-size: 2rem;
     color: var(--delft-blue); /* Use primary color */
@@ -87,7 +86,6 @@ form input[type="email"] {
     border-radius: 5px;
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1); /* Use shadow color */
     border-radius: 5px;
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1); /* Use shadow color */
@@ -175,7 +173,7 @@ h1,p {
     text-align: center;
 }
 
-button, input {
+.letters-buttons {
     padding: 10px 20px;
     margin: 10px;
     font-size: 16px;
