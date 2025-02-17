@@ -6,53 +6,31 @@ Letters Game
 {% endblock %}
 
 {% block content %}
+<div class="home-container">
 <h1>Welcome to the Letters Game</h1>
-<p>Enjoy playing the game!</p>
-
-<div class="scoreboard">
-    <h1>Scoreboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Score</th>
-                <th>Initials</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for player in players %}
-            <tr>
-                <td>{{ player.name }}</td>
-                <td>{{ player.score }}</td>
-                <td>{{ player.intials }}</td>
-                <td>{{ player.game_date }}</td>
-                <td></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+<p>
+    Select vowels and consonants to form a set of 9 letters. You have 30 seconds to form the longest word possible using the selected letters. Words must be valid according to the dictionary. Submit your guess before the timer runs out. 
+</p>
 
 <center>
-<div class="clock">
-    <div class="clock-face">
-        <div class="hand second-hand"></div>
-        <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
-        <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand second-hand"></div>
+            <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+        </div>
     </div>
-</div>
-<button id="start-timer">Start 30-Second Timer</button>
+    <button id="start-timer">Start 30-Second Timer</button>
 </center>
 <div id="game">
     <button id="vowel-btn">Vowel</button>

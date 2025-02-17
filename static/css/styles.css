@@ -247,6 +247,13 @@ button, input {
     display: none;
 }
 
+/* homepage width */
+.home-container{
+    max-width: 900px;
+    margin: auto;
+}
+
+
 /* clock interface css */
 .clock {
     width: 300px;
@@ -257,7 +264,6 @@ button, input {
     padding: 2rem;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     background: white;
-    
 }
 
 .clock-face {

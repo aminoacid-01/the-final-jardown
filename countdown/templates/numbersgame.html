@@ -8,11 +8,31 @@ Numbers Game
 {% block content %}
 
 
+<div class="home-container">
 <div id="numbers-game">
     <h1>Welcome to the Numbers Game</h1>
     <p>Pick 6 numbers in total. You can pick from 4 high numbers (25, 50, 75, 100) and numbers 1-10.</p>
     <h3 id="target-number-title"></h3>
     <div id="target-number" class="hidden"></div>
+
+    <div class="clock">
+        <div class="clock-face">
+            <div class="hand second-hand"></div>
+            <div class="hour-mark" style="transform: rotate(30deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(60deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(90deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(120deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(150deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(180deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(210deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(240deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(270deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(300deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(330deg) translate(0, -130px);"></div>
+            <div class="hour-mark" style="transform: rotate(360deg) translate(0, -130px);"></div>
+        </div>
+    </div>
+    <button id="start-timer">Start 30-Second Timer</button>
     <h3>Selected Numbers</h3>
     <div id="selected-numbers" class="number-tiles"></div>
 
@@ -23,6 +43,7 @@ Numbers Game
         <div class="tile" data-type="high"></div>
         <div class="tile" data-type="high"></div>
     </div>
+    
     <h4>Small Numbers</h4>
     <div id="low-numbers" class="number-tiles grid">
         <div class="tile" data-type="low"></div>
@@ -47,32 +68,10 @@ Numbers Game
         <div class="tile" data-type="low"></div>
     </div>
 </div>
-<div class="scoreboard">
-    <h1>Scoreboard</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Score</th>
-                <th>Initials</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for player in players %}
-            <tr>
-                <td>{{ player.name }}</td>
-                <td>{{ player.score }}</td>
-                <td>{{ player.intials }}</td>
-                <td>{{ player.game_date }}</td>
-                <td></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script src="{% static 'js/numbersgame.js' %}"></script>
+<script src="{% static 'js/clock.js' %}"></script>
 {% endblock %}

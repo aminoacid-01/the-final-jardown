@@ -3,10 +3,17 @@ import requests
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .models import Scoreboard, Profile
+from django.shortcuts import render, redirect
+from .models import Scoreboard, Profile
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate, logout
 from django.urls import path
+from .forms import ProfileForm
+from django.contrib.auth.decorators import login_required
+
 from .forms import ProfileForm
 from django.contrib.auth.decorators import login_required
 

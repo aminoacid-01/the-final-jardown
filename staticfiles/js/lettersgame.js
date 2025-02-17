@@ -46,14 +46,15 @@ const lettersGame = {
             selectedLettersCopy.splice(index, 1);
         }
 
-        // Check if the word is valid using the proxy endpoint
+        // Check if the word is valid using a different dictionary API
+        // removed oxford dictionary API to make our lives easier
         console.log(`Checking word: ${guess}`);
-        const response = await fetch(`/proxy/oxford/${guess.toLowerCase()}/`);
+        const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${guess.toLowerCase()}/`);
 
         if (response.ok) {
             const data = await response.json();
             console.log('API response:', data);
-            return data.results && data.results.length > 0;
+            return data.length > 0;
         } else {
             console.error('API request failed:', response.status, response.statusText);
             return false;
