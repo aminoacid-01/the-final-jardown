@@ -17,6 +17,7 @@ Join us in this exciting journey and test your skills in The Final Jardown!
     - [Game Modes](#game-modes)
         - [Letters](#letters)
         - [Numbers](#numbers)
+- [Testing](#testing)
 - [Deployment](#deployment)
 - [Forking and Cloning the Repository](#forking-and-cloning-the-repository)
     - [Forking the Repository](#forking-the-repository)
@@ -90,6 +91,10 @@ We are committed to continuous improvement and welcome feedback on how we can fu
 - **Select Large and Small Numbers:** Players can choose a combination of large and small numbers, similar to the game show format.
 - **Target Number Generation:** A random target number is generated for players to reach using the selected numbers.
 - **Solution Validation:** The application checks if the player's solution is correct and provides feedback.
+
+## Testing:
+
+Refer to [TESTING.md](docs/TESTING.md) for details on testing.
 
 ## Deployment:
 
